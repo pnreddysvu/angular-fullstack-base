@@ -28,7 +28,7 @@
     "routeDirectory": "client/app/",
     "directiveDirectory": "client/app/",
     "filterDirectory": "client/app/",
-    "serviceDirectory": "client/app/",
+    "serviceDirectory": "client/app/factory",
     "basePath": "client",
     "filters": [
       "uirouter"
