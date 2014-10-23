@@ -212,8 +212,8 @@ module.exports = function (grunt) {
     wiredep: {
       target: {
         src: '<%= yeoman.client %>/index.html',
-        ignorePath: '<%= yeoman.client %>/',
-        exclude: [/bootstrap-sass-official/, /bootstrap.js/, '/json3/', '/es5-shim/']
+        ignorePath: '<%= yeoman.client %>/'
+        // exclude: [/bootstrap-sass-official/, /bootstrap.js/, '/json3/', '/es5-shim/']
       }
     },
 
@@ -345,6 +345,7 @@ module.exports = function (grunt) {
             'bower_components/**/*',
             'assets/images/{,*/}*.{webp}',
             'assets/fonts/**/*',
+            'assets/mespeak/**/*',
             'index.html'
           ]
         }, {
