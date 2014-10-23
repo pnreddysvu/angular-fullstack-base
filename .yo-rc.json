@@ -36,7 +36,7 @@
     "extensions": [
       "js",
       "html",
-      "scss"
+      "css"
     ],
     "directiveSimpleTemplates": "",
     "directiveComplexTemplates": "",
