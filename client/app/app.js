@@ -7,7 +7,9 @@ angular.module('serveMeApp', [
   'btford.socket-io',
   'ui.router',
   'ui.bootstrap',
-  'react'
+  'react',
+  'ui.select2',
+  'ui.sortable'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider
