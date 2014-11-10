@@ -22,5 +22,9 @@ Then couple of modification made to make it usable out of the box,
 8. Other CDN for webRTC made available for easy webrtc connectivity and out of the box access
 9. Specific asset folder with certain file type added to dist/files for public access
 10. Bootstrap.js enabled by taking bootstrap.js out of bower injection exclusion list.
+11. ui.select2 added as bower dependency. ( https://github.com/angular-ui/ui-select2 )
+12. ui.sortable added as bower dependency. ( https://github.com/angular-ui/ui-sortable ) 
+
+
 
 
