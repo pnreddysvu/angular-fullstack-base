@@ -23,7 +23,8 @@ Then couple of modification made to make it usable out of the box,
 9. Specific asset folder with certain file type added to dist/files for public access
 10. Bootstrap.js enabled by taking bootstrap.js out of bower injection exclusion list.
 11. ui.select2 added as bower dependency. ( https://github.com/angular-ui/ui-select2 )
-12. ui.sortable added as bower dependency. ( https://github.com/angular-ui/ui-sortable ) 
+12. ui.sortable added as bower dependency. ( https://github.com/angular-ui/ui-sortable ).
+13. ui-select replaced ui.select2.(https://github.com/angular-ui/ui-select).
 
 
 
