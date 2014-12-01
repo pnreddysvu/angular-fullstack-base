@@ -8,7 +8,7 @@ angular.module('serveMeApp', [
   'ui.router',
   'ui.bootstrap',
   'react',
-  'ui.select2',
+  'ui.select',
   'ui.sortable'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
