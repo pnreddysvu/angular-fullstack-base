@@ -25,8 +25,9 @@ Then couple of modification made to make it usable out of the box,
 11. ui.select2 added as bower dependency. ( https://github.com/angular-ui/ui-select2 )
 12. ui.sortable added as bower dependency. ( https://github.com/angular-ui/ui-sortable ).
 13. ui-select replaced ui.select2.(https://github.com/angular-ui/ui-select).
-14. Polymer added as bower dependency bower install --save Polymer/polymer and then import included in index.html
-15. element structure introduced for easy injection of custom polymer element to through out the apps, style sheet being separated and linked to custom polymer element
+14. Polymer added as bower dependency (https://github.com/polymer/polymer).
+15. bower install --save Polymer/polymer and then import included in index.html
+16. element structure introduced for easy injection of custom polymer element to through out the apps, style sheet being separated and linked to custom polymer element
 
 
 
