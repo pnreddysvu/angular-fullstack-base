@@ -18,6 +18,16 @@
       <link rel="stylesheet" href="bower_components/angular-ui-select/dist/select.css" />
       <!-- endbower -->
     <!-- endbuild -->
+
+    <!-- ################# POLYMER SETUP #################################  -->
+    <!-- 1. Load platform support before any code that touches the DOM. -->
+    <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+    
+    <!-- 2. Load the component using an HTML Import, in this case element list is imported which consists of all required elementLis -->
+    <link rel="import" href="elements/elementList.html">
+
+    <!-- ################# POLYMER SETUP #################################  -->
+
     <!-- build:css({.tmp,client}) app/app.css -->
     <link rel="stylesheet" href="app/app.css">
       <!-- injector:css -->
@@ -35,7 +45,9 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div ui-view=""></div>
+    <div ui-view="">
+
+    </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
@@ -87,6 +99,8 @@
       <script src="bower_components/jquery-ui/jquery-ui.js"></script>
       <script src="bower_components/angular-ui-sortable/sortable.js"></script>
       <script src="bower_components/angular-ui-select/dist/select.js"></script>
+      <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+      <script src="bower_components/polymer/polymer.js"></script>
       <!-- endbower -->
       <script src="socket.io-client/socket.io.js"></script>
     <!-- endbuild -->
