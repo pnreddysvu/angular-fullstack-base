@@ -29,7 +29,8 @@ Then couple of modification made to make it usable out of the box,
 15. Polymer core elements included (bower install --save Polymer/core-elements) and Polymer paper elements included (bower install --save Polymer/paper-elements).
 16. Element structure introduced for easy injection of custom polymer element to through out the apps, style sheet being separated and linked to custom polymer element.
 17. Gruntfile wiredep excludes polymer and webcomponents to avoid multiple injection of polymer.html "exclude: [/polymer/, /webcomponentsjs/]"
-18. 
+18. Gruntfile modified to add '<%= yeoman.client %>/elements/{,*//*}*.{png,jpg,jpeg,gif,webp,svg,html,js,json}' to include polymer custom elements directory into livereload list.
+19. 
 
 
 
