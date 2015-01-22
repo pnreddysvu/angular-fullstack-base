@@ -1,17 +1,29 @@
-<!-- <link rel="import" href="../bower_components/polymer/polymer.html"> -->
-<polymer-element name="my-element" noscript>
-  <template>
-   
-   <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@******************************************@@@@@@@@@@@@@@@@@@ -->
-    <!-- ##############################   External CSS for this element styling  ################## -->
-    <link rel="stylesheet" href="my-element.css">
-    <!-- ##############################******************************************################## -->
-    <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+<!-- ***************** link to polymer.html as dependency injection for each element **********************  -->
+<link rel="import" href="../../bower_components/polymer/polymer.html">
 
-    <span id="cssTest">Hello from <b>my-element</b>. This is my Shadow DOM.</span>
-  </template>
-   
-</polymer-element>
+<!-- ############ Polymer element define here ##################### -->
+<polymer-element name="my-element">
+	<template>
+	    <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@******************************************@@@@@@@@@@@@@@@@@@ -->
+	    <!-- ##############################   External CSS for this element styling  ################## -->
+	    <link rel="stylesheet" href="my-element.css">
+	    <!-- ##############################******************************************################## -->
+	    <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+	    <!-- @@@@@@@@@@@@ Template HTML Frame work here @@@@@@@@@@@@@@@ -->
+	    <span id="cssTest">Hello from <b>my-element</b>. This is my Shadow DOM.</span>
+
+	    {{getData()}}
+	    <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ @@@@@ -->
+	 </template>
+    <script>
+	    Polymer('my-element',{
+	     getData:function(){
+	     	console.log("Polymer elemnt working with script registered");
+	     }
+	    });
+     </script> 
+ </polymer-element>
 
  
  
