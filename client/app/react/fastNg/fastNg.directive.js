@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('serveMeApp')
-  .directive('main', function () {
+  .directive('fastNg', function () {
     return {
       templateUrl: 'app/main/main.html',
       restrict: 'EA',
