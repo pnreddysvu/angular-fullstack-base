@@ -31,6 +31,7 @@ Then couple of modification made to make it usable out of the box,
 17. Gruntfile wiredep excludes polymer and webcomponents to avoid multiple injection of polymer.html "exclude: [/polymer/, /webcomponentsjs/]"
 18. Gruntfile modified to add '<%= yeoman.client %>/elements/{,*//*}*.{png,jpg,jpeg,gif,webp,svg,html,js,json}' to include polymer custom elements directory into livereload list.
 19. Smooth Scroll menu available for single page application in angular framework,using $location.hash(id) and $anchorScroll() service.
+20. reactComponent listed in components/reactComponents/reactClass.js, individual angular directives will have access to these reactClasses through out the app for view rendering.
 
 
 
