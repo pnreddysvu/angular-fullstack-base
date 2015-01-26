@@ -350,6 +350,7 @@ module.exports = function (grunt) {
             'assets/fonts/**/*',
             'assets/mespeak/**/*',
             'assets/dataDir/**/*',
+            'elements/**/*',
             'index.html'
           ]
         }, {
