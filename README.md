@@ -34,6 +34,8 @@ Then couple of modification made to make it usable out of the box,
 20. reactComponent listed in components/reactComponents/reactClass.js, individual angular directives will have access to these reactClasses through out the app for view rendering.
 21. Firebase element added as bower dependency and included in element list for global access through out the app for api connection to firebase as source for data.(bower install --save firebase) && (bower install --save Polymer/firebase-element).
 22. Elements directory made available for production apps via grunt, 'elements/**/*' included in public directory by grunt copy task.
+23. Firebase element and core ajax element being implemented, api call and data rendering being demonstrated for sample app.
+24. All custom elements must be included in elementList after firebase element,core element and paper element.
 
 
 
