@@ -55,7 +55,7 @@
 
 	    <!-- #############  View rendering with data from Firebase api call via firebase element #############-->
 	   	<div>
-	   	  <span id="cssAjax">Shadow dom is accessing data from firebase api below via firebase element</span>
+	   	  <span id="cssFirebase">Shadow dom is accessing data from firebase api below via firebase element</span>
 		    <!-- ********* iterate over api payload ***************** -->
 		    <template repeat='{{data in datas}}'>
 		    	<li><span>Goal : {{data.goalName}} , </span><span>Desc : {{data.goalDesc}} , </span></li>
