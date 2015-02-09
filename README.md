@@ -36,6 +36,7 @@ Then couple of modification made to make it usable out of the box,
 22. Elements directory made available for production apps via grunt, 'elements/**/*' included in public directory by grunt copy task.
 23. Firebase element and core ajax element being implemented, api call and data rendering being demonstrated for sample app.
 24. All custom elements must be included in elementList after firebase element,core element and paper element.
+25. C3.js library added for charting as bower dependency as well as d3 manual cdn pointing removed, as c3 has dependency of d3.
 
 
 
