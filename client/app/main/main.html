@@ -61,6 +61,19 @@
     <my-element></my-element>
   <!-- ***************************************************************************** -->
 
+  <!-- ##############  File Upload with multer  ############ -->
+    <h4>File upload with multer and busy boy</h4>
+     <div class="uploadFile">
+       <form id      =  "uploadForm"
+           enctype   =  "multipart/form-data"
+           action    =  "/api/uploads"
+           method    =  "post">
+      <input type="file" name="userPhoto" />
+      <input type="submit" value="Upload Image" name="submit">
+      </form>
+     </div>
+  <!-- ***************************************************************************** -->
+
   <!-- ********************* Socket IO active demonstration ************************* -->
       <h1 class="page-header">Features:</h1>
       <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in awesomeThings">
