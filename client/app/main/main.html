@@ -1,4 +1,4 @@
-<!-- ###################### HEADER #################################### -->
+ <!-- ###################### HEADER #################################### -->
 <!-- Toolbars or Navbars -->
 <div ng-include="'components/navbar/navbar.html'"></div>   
 <!-- ********************* Single page applications Smooth scroll menu available ************************* -->
@@ -31,8 +31,8 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-12">
-    
 
+  
   <!-- ********************* Single page applications target container ************************* -->
     <!-- ==== ABOUT ==== -->
     <div class="container" id="about" name="about">
@@ -63,16 +63,69 @@
 
   <!-- ##############  File Upload with multer  ############ -->
     <h4>File upload with multer and busy boy</h4>
-     <div class="uploadFile">
-       <form id      =  "uploadForm"
-           enctype   =  "multipart/form-data"
-           action    =  "/api/uploads"
-           method    =  "post">
-      <input type="file" name="userPhoto" />
-      <input type="submit" value="Upload Image" name="submit">
-      </form>
-     </div>
+    <div class="uploadFile">
+        <form id        =  "uploadForm"
+              enctype   =  "multipart/form-data"
+              action    =  "/api/uploads"
+              method    =  "post">
+          <input type="file" name="userPhoto" />
+          <input type="submit" value="Upload Image" name="submit">
+         </form>
+       </div>
   <!-- ***************************************************************************** -->
+  
+
+  <!-- #########################################  Email sent with nodemailer  ################################### -->
+  
+  <!-- Pop email modal to send email -->
+  <h4>Email Box</h4>
+
+  <!-- Paper dialog will be displayed on click -->
+  <paper-dialog transition="core-transition-center" id="emailModal" backdrop closeSelector="[affirmative]" resizerIsPeer=false>
+     <!-- <input type="text" ng-model="myData" /> -->
+         <!-- *************************add task top card*************************** -->
+          <div class = "todoTask" >   
+            <div class="emailCardHead">Compose: 
+            </div>    
+            <div class = "cardBody">
+              <form horizontal layout >
+                <div>
+                <div>
+                  <paper-input-decorator label="To: " class="inputEmail" id="mailTo" error="Value must start with a number!">
+                     <input id="taskName" ng-model="formdata.mailTo" is="core-input">
+                     </paper-input-decorator>
+                 </div>
+                <div class="inputEmail">
+                  <paper-input-decorator label="Subject:" class="inputEmail" id="mailSubject" error="Value must start with a number!">
+                     <input id="taskDesc" ng-model="formdata.mailSubject" is="core-input">
+                     </paper-input-decorator>
+                     <p id="errMsg"></p>
+                 </div>
+                <div>
+                  <paper-autogrow-textarea label=" " id="a1">
+                    <textarea class="textAreaClass" id="t1" ng-model="formdata.mailText" placeholder="write short email"></textarea>
+                  </paper-autogrow-textarea>
+                 </div>
+                  <!-- use local ajax -->
+                  <div class="buttonAdd">
+                  <paper-button raised affirmative class="emailBtn" ng-click="sendMail()">Send</paper-button>
+                  <paper-button raised dismissive class="emailDraftBtn" ng-click="saveMail()">Draft</paper-button>
+                  <!-- use firebase connection -->
+                   <!-- <button on-click="{{addGoal}}">Add Goal</button> -->
+                  </div>
+                 </div>
+               </form>
+              </div>      
+              <div class = "cardFooterAdd" >
+               </div>   
+          </div>
+  </paper-dialog>
+  <!-- ***************************************************************************** -->
+
+  <button ng-click="mailModal()">Email Box</button>
+
+  <!-- ************************************************************************************************************* -->
+
 
   <!-- ********************* Socket IO active demonstration ************************* -->
       <h1 class="page-header">Features:</h1>
@@ -107,4 +160,4 @@
          <a href="https://github.com/knofler/angular-fullstack-base/issues">Issues</a></p>
   </div>
  </footer>
-<!-- ################## END OF FOOTER ################################# !-->
+<!-- ################## END OF FOOTER ################################# -->
