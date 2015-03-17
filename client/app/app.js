@@ -18,6 +18,35 @@ angular.module('serveMeApp', [
     $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('authInterceptor');
   })
+  .filter('pagination', function(){
+    return function(input, start){
+    if(input) {
+            start = +start; //parse to int
+            return input.slice(start);
+        }
+        return [];
+      }
+    })
+  .filter('advancefilter', ['$filter', function($filter){
+    return function(data, text){
+      if(text !== undefined){
+        var textArr = text.split(' ');
+        angular.forEach(textArr, function(test){
+            if(test){
+                  data = $filter('filter')(data, test);
+            }
+        });
+        return data;
+      }else{
+        return data;
+      }     
+    }
+    }])
+  .filter('capitalize', function() {
+    return function(input, all) {
+      return (!!input) ? input.replace(/([^\W_]+[^\s-]*) */g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}) : '';
+    }
+  })
 
   .factory('authInterceptor', function ($rootScope, $q, $cookieStore, $location) {
     return {
