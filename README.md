@@ -38,8 +38,7 @@ Then couple of modification made to make it usable out of the box,
 24. All custom elements must be included in elementList after firebase element,core element and paper element.
 25. C3.js library added for charting as bower dependency as well as d3 manual cdn pointing removed, as c3 has dependency of d3.
 26. Express/multer.js (https://github.com/expressjs/multer) included for file upload,express.js file configured,api route created for form data store and a sample form provided. upload directory set to ./client/assets/images/uploads/ for future inclusion in dist.
-
-
+27. Nodemailer (https://github.com/andris9/Nodemailer) version 1.3.2 included and configured, global smtpTransfer object created, email api, email modal form and email processing rest Api created and configured, providing valid nodemailer email account will be able to send email out of the box.
 
 
 
