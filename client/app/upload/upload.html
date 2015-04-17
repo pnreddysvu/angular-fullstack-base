@@ -104,7 +104,11 @@
 
                 </div>
                 <div class="col-md-9" style="margin-bottom: 40px">
-               <!-- <img src='http://res.cloudinary.com/hjx9vff81/image/upload/v1429245496/sample_id.jpg' width='100' height='150' /> -->
+                    <div class="container imgBox" id="image-{{view._id}}">
+                        <div class="row" ng-repeat="image in imageData track by $index">
+                        <div class="col-md-3 col-sm-4 col-xs-6">
+                        <img class="img-responsive" src="{{image.path}}" />
+                  </div>
                 </div>
 
             </div>

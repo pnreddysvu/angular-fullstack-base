@@ -1,8 +1,13 @@
 'use strict';
 
 angular.module('serveMeApp')
-  .controller('UploadCtrl', function ($scope,FileUploader) {
+  .controller('UploadCtrl', function ($scope,FileUploader,$http,socket) {
    
+   //Get image info from DB and display
+   $http.get('/api/uploads/').success(function(data){
+        $scope.imageData = data;
+        socket.syncUpdates('upload', $scope.imageData);
+    });
     
   	var uploader = $scope.uploader = new FileUploader({
             // url: '/uploads'
