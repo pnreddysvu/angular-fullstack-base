@@ -90,15 +90,15 @@ module.exports = function(app) {
         function(result) { 
           // Write Image information to database
           Upload.create({
-            goal_id:req.body.goal_id,
+            // goal_id:req.body.goal_id,
             original_name:result.originalname,
             new_name:req.files.file.name,
             mimeType:req.files.file.mimetype,
             path:result.url,
             ext:req.files.file.extension,
             size:req.files.file.size,
-            upload_date:result.created_at,
-            uploaded_by:req.body.user_id  
+            upload_date:result.created_at
+            // uploaded_by:req.body.user_id  
           });
           console.log(result); 
          },     
