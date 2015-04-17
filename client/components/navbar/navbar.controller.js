@@ -4,6 +4,7 @@ angular.module('serveMeApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
     $scope.menu = [
       {'title': 'Home','link': '/'},
+      {'title': 'Upload','link':'/upload'},
       {'title': 'React','link':'/react'}
       ];
 

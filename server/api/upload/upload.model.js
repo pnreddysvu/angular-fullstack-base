@@ -4,8 +4,15 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var UploadSchema = new Schema({
-  name: String,
-  info: String,
+  goal_id:String,	
+  original_name:String,
+  new_name: String,
+  mimeType:String,
+  path:String,
+  ext:String,
+  size:Number,
+  upload_date:Date,
+  uploaded_by:String,
   active: Boolean
 });
 

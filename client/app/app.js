@@ -9,7 +9,8 @@ angular.module('serveMeApp', [
   'ui.bootstrap',
   'react',
   'ui.select',
-  'ui.sortable'
+  'ui.sortable',
+  'angularFileUpload'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider
