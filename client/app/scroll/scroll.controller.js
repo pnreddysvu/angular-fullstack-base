@@ -4,8 +4,8 @@ angular.module('serveMeApp')
   .controller('ScrollCtrl', function ($scope,socket,$http) {
    
    $scope.dataArr = '';
-   $scope.busy    = false;
-   $scope.goal_id = '';
+
+   //UI-GRID Implementation
 
    $http.get("/api/scrolls/").success(function(data){
    		$scope.dataArr = data
