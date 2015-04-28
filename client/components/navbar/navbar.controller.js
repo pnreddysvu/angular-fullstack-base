@@ -5,7 +5,8 @@ angular.module('serveMeApp')
     $scope.menu = [
       {'title': 'Home','link': '/'},
       {'title': 'Upload','link':'/upload'},
-      {'title': 'React','link':'/react'}
+      {'title': 'React','link':'/react'},
+      {'title': 'Scroll','link':'/scroll'}
       ];
 
     $scope.isCollapsed = true;
