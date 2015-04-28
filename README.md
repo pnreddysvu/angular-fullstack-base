@@ -45,6 +45,7 @@ Then couple of modification made to make it usable out of the box,
 31. Cloudinary (http://cloudinary.com/documentation/node_integration#getting_started_guide) nodejs package included and configured for heroku deployment.
 32. angular-file-upload -> multer -> Cloudinary -> Upload.Api -> Mongodb -> view
 33. Socketio-jwt(https://github.com/auth0/socketio-jwt) enabled for authenticating socket.io
+34. UI-Grid (http://ui-grid.info/) implemented as bower dependency(https://github.com/angular-ui/bower-ui-grid).
 
 
 
