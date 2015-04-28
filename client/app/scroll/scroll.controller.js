@@ -1,8 +1,10 @@
 'use strict';
 
 angular.module('serveMeApp')
-  .controller('ScrollCtrl', function ($scope,socket,$http) {
+  .controller('ScrollCtrl', function ($scope,dataSrv,socket,$http) {
    
+   $scope.reddit = new dataSrv();
+
    $scope.dataArr = '';
 
    //UI-GRID Implementation

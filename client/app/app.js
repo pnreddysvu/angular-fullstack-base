@@ -12,7 +12,8 @@ angular.module('serveMeApp', [
   'ui.sortable',
   'angularFileUpload',
   'ui.grid.infiniteScroll',
-  'ui.grid'
+  'ui.grid',
+  'infinite-scroll'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider
