@@ -9,7 +9,7 @@ angular.module('serveMeApp')
 
    $http.get("/api/scrolls/").success(function(data){
    		$scope.dataArr = data
-   		socket.syncUpdate('scroll',$scope.dataArr)
+   		socket.syncUpdates('scroll',$scope.dataArr)
    		console.log('data', data)
    	});
 
