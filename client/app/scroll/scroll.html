@@ -4,15 +4,16 @@
 
 <div class="container">
 
-<div ng-if="bool" class="fade">
-   Fade me in out
-</div>
-<button ng-click="bool=true">Fade In!</button>
-<button ng-click="bool=false">Fade Out!</button>
 
 <!-- ########## UI-GRID Infinite scroll DIV ############## -->
+<button id="button_add" class="btn" ng-click="add()">Add</button>
+<button id="button_remove" class="btn" ng-click="remove()">Remove Last</button>
+<button id="button_splice" class="btn" ng-click="splice()">Splice</button>
+<button id="button_unsplice" class="btn" ng-click="unsplice()">Remove Middle</button>
+<button class="btn btn-success" ng-click="gridOptions.showColumnFooter = !gridOptions.showColumnFooter; $scope.gridApi.core.notifyDataChange(uiGridConstants.dataChange.OPTIONS);">Toggle Column Footer</button>
 <p class="head"><code><strong>UI-Grid</strong></code></p>
-<div ui-grid="{ data: dataArr, columnDefs : columnDefs }" class="grid" ui-grid-infinite-scroll="20">
+
+<div ui-grid="gridOptions" class="grid" ui-grid-edit ui-grid-infinite-scroll="20" dir="rtl" ui-grid-pinning ui-grid-resize-columns>
 
  </div>
 <!-- ########## UI-GRID Infinite scroll DIV ############## -->

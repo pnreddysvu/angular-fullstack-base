@@ -11,10 +11,10 @@ angular.module('serveMeApp', [
   'ui.select',
   'ui.sortable',
   'angularFileUpload',
-  'ui.grid.infiniteScroll',
-  'ui.grid',
+  'ui.grid.infiniteScroll','ui.grid','ui.grid.edit','ui.grid.resizeColumns', 'ui.grid.selection', 'ui.grid.pinning',
   'infinite-scroll',
   'ngAnimate'
+
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider
