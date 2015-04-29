@@ -2,17 +2,17 @@
 <!-- Toolbars or Navbars -->
 <div ng-include="'components/navbar/navbar.html'"></div>   
 
-<!-- ########## UI-GRID Infinite scroll DIV ############## -->
 <div class="container">
-	   
+
+<!-- ########## UI-GRID Infinite scroll DIV ############## -->
+<p class="head"><code><strong>UI-Grid</strong></code></p>
 <div ui-grid="{ data: dataArr, columnDefs : columnDefs }" class="grid" ui-grid-infinite-scroll="20">
 
- </div>
-	    	
  </div>
 <!-- ########## UI-GRID Infinite scroll DIV ############## -->
 
 <!-- ########## INFINITE SCROLL DIV ############## -->
+<p class="head"><code><strong>NG Infinite Scroll</strong></code></p>
 <div infinite-scroll='reddit.nextPage()' infinite-scroll-disabled='reddit.busy' infinite-scroll-distance='1'>
     <div ng-repeat='item in reddit.items'>
       <span class='score'>{{item.goalName}}</span>
@@ -28,6 +28,7 @@
   </div>
 <!-- ########## INFINITE SCROLL DIV ############## -->
 
+ </div>
 <!-- ################## FOOTER ######################################## -->
 <footer class="footer">
   <div class="container">
