@@ -4,6 +4,12 @@
 
 <div class="container">
 
+<div ng-if="bool" class="fade">
+   Fade me in out
+</div>
+<button ng-click="bool=true">Fade In!</button>
+<button ng-click="bool=false">Fade Out!</button>
+
 <!-- ########## UI-GRID Infinite scroll DIV ############## -->
 <p class="head"><code><strong>UI-Grid</strong></code></p>
 <div ui-grid="{ data: dataArr, columnDefs : columnDefs }" class="grid" ui-grid-infinite-scroll="20">

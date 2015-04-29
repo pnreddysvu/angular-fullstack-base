@@ -13,7 +13,8 @@ angular.module('serveMeApp', [
   'angularFileUpload',
   'ui.grid.infiniteScroll',
   'ui.grid',
-  'infinite-scroll'
+  'infinite-scroll',
+  'ngAnimate'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider
