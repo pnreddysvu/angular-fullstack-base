@@ -16,11 +16,12 @@
 <div ui-grid="gridOptions" class="grid" 
   ui-grid-edit ui-grid-infinite-scroll="20" 
   ui-grid-pinning ui-grid-resize-columns
-  ui-grid-exporter ui-grid-selection
+  ui-grid-importer ui-grid-exporter ui-grid-selection
   >
-
-
  </div>
+   <div ng-if='columnChanged'>
+        Column Visibility Changed - name: {{ columnChanged.field }} visible: {{ columnChanged.visible }}
+      </div>
 <!-- ########## UI-GRID Infinite scroll DIV ############## -->
 
 <!-- ########## INFINITE SCROLL DIV ############## -->

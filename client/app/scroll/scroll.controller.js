@@ -9,42 +9,55 @@ angular.module('serveMeApp')
 
     var fakeI18n = function( title ){
     var deferred = $q.defer();
-    $interval( function() {
-      deferred.resolve( 'col: ' + title );
-    }, 1000, 1);
-    return deferred.promise;
-  };
+      $interval( function() {
+        deferred.resolve( 'col: ' + title );
+      }, 1000, 1);
+      return deferred.promise;
+    };
 
 
    $scope.gridOptions = {
       showGridFooter: true,
       showColumnFooter: true,
       enableFiltering: true,
-      exporterMenuCsv: false,
+      exporterMenuCsv: true,
       enableGridMenu: true,
+      enableSorting: true,
       gridMenuTitleFilter: fakeI18n,
       data:data,
+      importerDataAddCallback: function ( grid, newObjects ) {
+        $scope.data = $scope.data.concat( newObjects );
+      },
       columnDefs:[
-        {field:'goalName',
+        {field:'goalName',width:'10%',
           headerCellClass: function(grid, row, col, rowRenderIndex, colRenderIndex) {
               if (col.sort.direction === uiGridConstants.ASC) {
                 return 'red';
               }
         }},
-        {field:'goalDesc',cellTooltip: true},
-        {field:'isTodo',cellTooltip: 
+        {field:'goalDesc',cellTooltip: true,width:'15%'},
+        {field:'isTodo',width:'8%',cellTooltip: 
         function( row, col ) {
           return 'field: ' + row.entity.field + ' isTodo: ' + row.entity.isTodo;
         } },
-        {field:'isFav'},
-        {field:'latitude'},
-        {field:'longitude'},
-        {field:'taskProgress'},
-        {field:'created'},
-        {field:'created_by'},
-        {field:'goal_completed'},
-        {field:'isActive'}
+        {field:'isFav',width:'8%'},
+        {field:'latitude',width:'10%'},
+        {field:'longitude',width:'10%'},
+        {field:'taskProgress',width:'8%'},
+        {field:'created',width:'20%'},
+        {field:'created_by',width:'20%'},
+        {field:'goal_completed',width:'20%'},
+        {field:'isActive',width:'5%'}
         ],
+        gridMenuCustomItems: [
+          {
+            title: 'Rotate Grid',
+            action: function ($event) {
+              this.grid.element.toggleClass('rotated');
+            },
+            order: 210
+          }
+      ],
       onRegisterApi: function(gridApi) {
         $scope.gridApi = gridApi;
         var cellTemplate = 'ui-grid/selectionRowHeader';   // you could use your own template here
@@ -52,6 +65,14 @@ angular.module('serveMeApp')
         $scope.gridApi.core.on.sortChanged( $scope, function( grid, sort ) {
           $scope.gridApi.core.notifyDataChange( uiGridConstants.dataChange.COLUMN );
         })
+        // interval of zero just to allow the directive to have initialized
+        $interval( function() {
+          gridApi.core.addToGridMenu( gridApi.grid, [{ title: 'Dynamic item', order: 100}]);
+        }, 0, 1);
+      
+        gridApi.core.on.columnVisibilityChanged( $scope, function( changedColumn ){
+          $scope.columnChanged = { field: changedColumn.colDef.name, visible: changedColumn.colDef.visible };
+        });
       }
     };
 
