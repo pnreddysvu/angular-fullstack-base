@@ -13,7 +13,12 @@
 <button class="btn btn-success" ng-click="gridOptions.showColumnFooter = !gridOptions.showColumnFooter; $scope.gridApi.core.notifyDataChange(uiGridConstants.dataChange.OPTIONS);">Toggle Column Footer</button>
 <p class="head"><code><strong>UI-Grid</strong></code></p>
 
-<div ui-grid="gridOptions" class="grid" ui-grid-edit ui-grid-infinite-scroll="20" dir="rtl" ui-grid-pinning ui-grid-resize-columns>
+<div ui-grid="gridOptions" class="grid" 
+  ui-grid-edit ui-grid-infinite-scroll="20" 
+  ui-grid-pinning ui-grid-resize-columns
+  ui-grid-exporter ui-grid-selection
+  >
+
 
  </div>
 <!-- ########## UI-GRID Infinite scroll DIV ############## -->

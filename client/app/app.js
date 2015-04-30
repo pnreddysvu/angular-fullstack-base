@@ -12,6 +12,7 @@ angular.module('serveMeApp', [
   'ui.sortable',
   'angularFileUpload',
   'ui.grid.infiniteScroll','ui.grid','ui.grid.edit','ui.grid.resizeColumns', 'ui.grid.selection', 'ui.grid.pinning',
+  'ui.grid.exporter',
   'infinite-scroll',
   'ngAnimate'
 

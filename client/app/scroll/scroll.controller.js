@@ -1,17 +1,28 @@
 'use strict';
 
 angular.module('serveMeApp')
-  .controller('ScrollCtrl', function ($scope,dataSrv,socket,$http,uiGridConstants) {
+  .controller('ScrollCtrl', function ($scope,dataSrv,socket,$http,uiGridConstants,$interval, $q) {
    
    $scope.reddit = new dataSrv();
 
     var data= [];
+
+    var fakeI18n = function( title ){
+    var deferred = $q.defer();
+    $interval( function() {
+      deferred.resolve( 'col: ' + title );
+    }, 1000, 1);
+    return deferred.promise;
+  };
 
 
    $scope.gridOptions = {
       showGridFooter: true,
       showColumnFooter: true,
       enableFiltering: true,
+      exporterMenuCsv: false,
+      enableGridMenu: true,
+      gridMenuTitleFilter: fakeI18n,
       data:data,
       columnDefs:[
         {field:'goalName',
@@ -37,7 +48,7 @@ angular.module('serveMeApp')
       onRegisterApi: function(gridApi) {
         $scope.gridApi = gridApi;
         var cellTemplate = 'ui-grid/selectionRowHeader';   // you could use your own template here
-        $scope.gridApi.core.addRowHeaderColumn( { name: 'rowHeaderCol', displayName: '', width: 30, cellTemplate: cellTemplate} );
+        // $scope.gridApi.core.addRowHeaderColumn( { name: 'rowHeaderCol', displayName: '', width: 30, cellTemplate: cellTemplate} );
         $scope.gridApi.core.on.sortChanged( $scope, function( grid, sort ) {
           $scope.gridApi.core.notifyDataChange( uiGridConstants.dataChange.COLUMN );
         })
