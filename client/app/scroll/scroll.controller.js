@@ -8,7 +8,7 @@ angular.module('serveMeApp')
   // var data          = [];
   $scope.data       = [];
   $scope.firstPage  = 2;
-  $scope.lastPage   = 2;
+  $scope.lastPage   = 0;
 
   $scope.gridOptions = {
     showGridFooter            : true,
@@ -21,7 +21,7 @@ angular.module('serveMeApp')
     enableSorting             : true,
     saveFocus                 : false,
     saveScroll                : true,
-    infiniteScrollRowsFromEnd : 18,
+    infiniteScrollRowsFromEnd : 40,
     infiniteScrollUp          : true,
     infiniteScrollDown        : true,
     selectionRowHeaderWidth   : 35,
@@ -201,7 +201,8 @@ angular.module('serveMeApp')
     .success(function(data) {
       $scope.lastPage++;
       var newData = $scope.getPage(data, $scope.lastPage);
-      // $scope.gridApi.infiniteScroll.saveScrollPercentage();
+      $scope.gridApi.infiniteScroll.saveScrollPercentage();
+      console.log("inside getDataDown $scope.gridApi is :",$scope.gridApi.infiniteScroll.dataLoaded($scope.firstPage > 0, $scope.lastPage < 4))
       $scope.data = $scope.data.concat(newData);
       $scope.gridApi.infiniteScroll.dataLoaded($scope.firstPage > 0, $scope.lastPage < 4)
       .then(function() {$scope.checkDataLength('up');})
@@ -221,7 +222,7 @@ angular.module('serveMeApp')
     .success(function(data) {
       $scope.firstPage--;
       var newData = $scope.getPage(data, $scope.firstPage);
-      // $scope.gridApi.infiniteScroll.saveScrollPercentage();
+      $scope.gridApi.infiniteScroll.saveScrollPercentage();
       $scope.data = newData.concat($scope.data);
       $scope.gridApi.infiniteScroll.dataLoaded($scope.firstPage > 0, $scope.lastPage < 4).then(function() {$scope.checkDataLength('down');}).then(function() {
         promise.resolve();
@@ -250,7 +251,7 @@ angular.module('serveMeApp')
       $scope.gridApi.infiniteScroll.saveScrollPercentage();
       
       if( discardDirection === 'up' ){
-        $scope.data = $scope.data.slice(20);
+        $scope.data = $scope.data.slice(100);
         $scope.firstPage++;
         $timeout(function() {
           // wait for grid to ingest data changes
@@ -259,6 +260,7 @@ angular.module('serveMeApp')
       } else {
         $scope.data = $scope.data.slice(0, 400);
         $scope.lastPage--;
+        console.log("$scope.lastPage in checkDataLength :" , $scope.lastPage)
         $timeout(function() {
           // wait for grid to ingest data changes
           $scope.gridApi.infiniteScroll.dataRemovedBottom($scope.firstPage > 0, $scope.lastPage < 4);
@@ -287,6 +289,7 @@ angular.module('serveMeApp')
       // timeout needed to allow digest cycle to complete,and grid to finish ingesting the data
       // you need to call resetData once you've loaded your data if you want to enable scroll up,
       // it adjusts the scroll position down one pixel so that we can generate scroll up events 
+      console.log("Inside getFirstData timeout function $scope.gridApi is :" ,$scope.gridApi)
       $scope.gridApi.infiniteScroll.resetScroll( $scope.firstPage > 0, $scope.lastPage < 4 );
     });
    });
