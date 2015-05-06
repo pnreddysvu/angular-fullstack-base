@@ -1,11 +1,13 @@
 'use strict';
 
 angular.module('serveMeApp')
-  .directive('custdir', function () {
+  .directive('custdir', function (dataSrv) {
     return {
       templateUrl: 'app/custdir/custdir.html',
       restrict: 'EA',
       link: function (scope, element, attrs) {
+
+        scope.reddit     = new dataSrv();
 
       	scope.dataArr = ['pencil','pen','school','home','fruit','job'] ;
 

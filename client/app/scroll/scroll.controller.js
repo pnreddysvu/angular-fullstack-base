@@ -1,9 +1,8 @@
 'use strict';
 
 angular.module('serveMeApp')
-  .controller('ScrollCtrl', function ($scope,dataSrv,socket,$http,uiGridConstants,$interval,$q,$log,$timeout) {
+  .controller('ScrollCtrl', function ($scope,socket,$http,uiGridConstants,$interval,$q,$log,$timeout) {
    
-  $scope.reddit     = new dataSrv();
   $scope.state      = {};
   // var data          = [];
   $scope.data       = [];
@@ -235,7 +234,7 @@ angular.module('serveMeApp')
     return promise.promise;
    };
   $scope.getPage          = function (data, page) {
-     // console.log("data inside getPage is ", data)
+    // console.log("data inside getPage is ", data)
     var res = [];
     for (var i = (page * 100); i < (page + 1) * 100  && i < data.length; ++i) {
       // console.log("data[i] is : ", data[i]);
