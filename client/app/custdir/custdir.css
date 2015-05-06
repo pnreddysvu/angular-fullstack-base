@@ -1,0 +1,12 @@
+.custLi{
+	padding: 5px;
+	list-style: none;
+	margin: 5px;
+	border: 1px solid #ccc;
+	width: 33%;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.custLi:hover{
+	background-color: #ffeedd;
+}
