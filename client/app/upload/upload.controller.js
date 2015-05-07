@@ -3,7 +3,7 @@
 angular.module('serveMeApp')
   .controller('UploadCtrl', function ($scope,FileUploader,$http,socket) {
     
-     $scope.controllerData = ['Upload-ten','Upload-nine','Upload-eight','Upload-seven','Upload-six','Upload-five'];
+     $scope.uploadData = ['Upload-ten','Upload-nine','Upload-eight','Upload-seven','Upload-six','Upload-five'];
 
   	var uploader = $scope.uploader = new FileUploader({
             // url: '/uploads'
