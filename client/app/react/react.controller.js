@@ -6,6 +6,7 @@ angular.module('serveMeApp')
 	// @@@@@@@@@@@@@@@@@@@ DATA SOURCES and Models @@@@@@@@@@@@@@@@@@@@@@@
 
     $scope.message = 'Hello';
+    $scope.controllerData = ['React-ten','React-nine','React-eight','React-seven','React-six','React-five'];
 
     // ********** REACT Data source for angular controller to use through out the apps***********
     

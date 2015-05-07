@@ -5,6 +5,9 @@ angular.module('serveMeApp')
     return {
       templateUrl: 'app/custdir/custdir.html',
       restrict: 'EA',
+      scope:{
+        userData : '=model'
+      },
       link: function (scope, element, attrs) {
 
         scope.okGreet  = function(name){
@@ -13,7 +16,7 @@ angular.module('serveMeApp')
           }else{
             return false;
           }
-         }
+         };
 
         scope.reddit     = new dataSrv();
 
