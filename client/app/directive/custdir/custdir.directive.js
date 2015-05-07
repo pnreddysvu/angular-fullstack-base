@@ -3,7 +3,7 @@
 angular.module('serveMeApp')
   .directive('custdir', function (dataSrv,$q,$timeout,$log) {
     return {
-      templateUrl: 'app/custdir/custdir.html',
+      templateUrl: 'app/directive/custdir/custdir.html',
       restrict: 'EA',
       link: function (scope, element, attrs) {
 
