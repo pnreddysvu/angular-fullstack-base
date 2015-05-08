@@ -1,4 +1,4 @@
-<!-- ###################### HEADER #################################### -->
+ <!-- ###################### HEADER #################################### -->
 <!-- Toolbars or Navbars -->
 <div ng-include="'components/navbar/navbar.html'"></div>   
 <!-- header divs and contents -->
@@ -36,8 +36,10 @@
 
   
   <!-- ##############  Insert custom directive here  ############ -->
+    <div class="dragDiv" draggable>Hello</div>
     <array-display datamodel=reactdata></array-display>
     <custdir data=scopedata on-tap="showMsg(arg)">Check out the data from transclude : {{transcludeVar}}</custdir>
+
   <!-- ***************************************************************************** -->
 
   
