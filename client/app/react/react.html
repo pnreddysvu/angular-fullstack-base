@@ -22,8 +22,8 @@
       <!-- ############ Example-1 -->
       <h1>Fast AngularJs</h1> 
       <h3>AngularJs with ReactJs</h3>
-      <input ng-model="framework"/>
-      <fast-ng framework="framework"></fast-ng>
+      <input ng-model = "framework"/>
+      <fast-ng framework = "framework"></fast-ng>
       <hr>
       Rendering with traditional AngularJs {{framework}}
 
@@ -37,7 +37,7 @@
   
   <!-- ##############  Insert custom directive here  ############ -->
     <array-display datamodel=reactdata></array-display>
-    <custdir on-tap="showMsg(arg)"></custdir>
+    <custdir data=scopedata on-tap="showMsg(arg)">Check out the data from transclude : {{transcludeVar}}</custdir>
   <!-- ***************************************************************************** -->
 
   

@@ -8,6 +8,10 @@ angular.module('serveMeApp')
     $scope.message   = 'Hello';
     $scope.reactdata = ['React-ten','React-nine','React-eight','React-seven','React-six','React-five'];
 
+    $scope.scopedata = "This is scope data from controller displayed via custDir Directive";
+
+    $scope.transcludeVar  = "This is from Controller?";
+
     $scope.showMsg =  function(data){
         console.log(data);
      };

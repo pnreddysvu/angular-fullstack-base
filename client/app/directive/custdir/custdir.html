@@ -1,8 +1,9 @@
 <div class="container">
 <p><strong>This is custom directive from here.</strong></p>
+  <p>{{data}}</p>
   <button ng-click="changeDiv()">Hide Custom Element</button>	
-
-  <button class="close" ng-click="render({arg:'data from directive'})">Show Data</button>
+  <button ng-click="render({arg:'data from directive'})">Show Data</button>
+  <div ng-transclude>{{transcludeVar}}</div>
 
 <!-- ########## INFINITE SCROLL DIV ############## -->
 <p class="head"><code><strong>NG Infinite Scroll</strong></code></p>

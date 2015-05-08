@@ -3,13 +3,14 @@
 angular.module('serveMeApp')
   .directive('custdir', function (dataSrv,$q,$timeout,$log) {
     return {
-      templateUrl: 'app/directive/custdir/custdir.html',
-      restrict: 'EA',
-      transclude: false,
+      templateUrl : 'app/directive/custdir/custdir.html',
+      restrict    : 'EA',
+      transclude  : true,
       scope:{
-        render:'&onTap'
+        render : '&onTap',
+        data: "="
       },
-      link: function (scope, element, attrs) {
+      link : function (scope, element, attrs) {
 
         scope.transcludeVar  = "This is from directive,Is it visible outside?";
 
