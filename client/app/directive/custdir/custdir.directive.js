@@ -5,7 +5,13 @@ angular.module('serveMeApp')
     return {
       templateUrl: 'app/directive/custdir/custdir.html',
       restrict: 'EA',
+      transclude: false,
+      scope:{
+        render:'&onTap'
+      },
       link: function (scope, element, attrs) {
+
+        scope.transcludeVar  = "This is from directive,Is it visible outside?";
 
         scope.reddit     = new dataSrv();
 

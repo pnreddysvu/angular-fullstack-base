@@ -8,6 +8,12 @@ angular.module('serveMeApp')
     $scope.message   = 'Hello';
     $scope.reactdata = ['React-ten','React-nine','React-eight','React-seven','React-six','React-five'];
 
+    $scope.showMsg =  function(data){
+        console.log(data);
+     };
+
+     // console.log($scope.transcludeVar);
+
     // ********** REACT Data source for angular controller to use through out the apps***********
     
     //ng-model being used for reactJs data Source

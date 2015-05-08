@@ -2,6 +2,8 @@
 <p><strong>This is custom directive from here.</strong></p>
   <button ng-click="changeDiv()">Hide Custom Element</button>	
 
+  <button class="close" ng-click="render({arg:'data from directive'})">Show Data</button>
+
 <!-- ########## INFINITE SCROLL DIV ############## -->
 <p class="head"><code><strong>NG Infinite Scroll</strong></code></p>
 <div infinite-scroll='reddit.nextPage()' infinite-scroll-disabled='reddit.busy' infinite-scroll-distance='1'>
