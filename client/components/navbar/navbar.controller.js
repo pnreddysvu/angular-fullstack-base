@@ -4,9 +4,10 @@ angular.module('serveMeApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
     $scope.menu = [
       {'title': 'Home','link': '/'},
-      {'title': 'Upload','link':'/upload'},
+      {'title': 'Chart','link':'/chart'},
       {'title': 'React','link':'/react'},
-      {'title': 'Scroll','link':'/scroll'}
+      {'title': 'Scroll','link':'/scroll'},
+      {'title': 'Upload','link':'/upload'}
       ];
 
     $scope.isCollapsed = true;
