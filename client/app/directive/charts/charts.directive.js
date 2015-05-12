@@ -15,18 +15,18 @@ angular.module('serveMeApp')
 		socket.socket.on('updateGraph',function(data){
 			// By using load() API, you can load data and update the chart dynamically as follows:
 			// *****************Generate chart without data********************
-				scope.update('',scope.chartdata.data1,'goal',scope.chartdata.data3);
+				scope.update(scope.chartData.date,scope.chartData.data1,scope.chartData.data2,scope.chartData.data3);
 				console.log("updating graph ...")
 			});
 
 		//update function defination
-		scope.update = function (name1,data1,name3,data3) {
+		scope.update = function (date,data1,data2,data3) {
 			scope.apiChart.load({
 				    columns:[
+				    	date,
 				    	data1,
-					    	[name3,data3],
-					    	['data1', 13, 34, 20, 50, 25, 35,34, 20, 50, 25, 35,22,32,12],
-					    	['data2', 34, 20, 50, 25, 35,53, 74, 60, 90, 15, 85,45,13,22]
+				    	data2,
+					    data3
 				    	],
 				    types:{
 						data2:'line' //Add
@@ -35,20 +35,22 @@ angular.module('serveMeApp')
 		 };
 
 		//C3 generate the graph for the first time on page on page load
-		scope.draw =  function (name1,data1,name3,data3) {
+		scope.draw =  function (date,data1,data2,data3) {
 			//On Page load run
 			setTimeout(function(){
+				console.log(data3)
 				// By using load() API, you can load data and update the chart dynamically as follows:
 				// *****************Generate chart without data********************
 				scope.apiChart = c3.generate({
 					bindto:'#apiChart',
 					data:{
-						x:name1,
+						x:date[0],
 					    columns:[
+					    	date,
 					    	data1,
-						    	[name3,data3],
-						    	['data2', 340, 200, 500, 250, 350,530, 740, 600, 900, 150, 850,456,123,222]
-					    	]
+					    	data2,
+						    data3
+					    ]
 					},
 					axis: {
 						x:{
@@ -67,16 +69,17 @@ angular.module('serveMeApp')
 		  // ************Load Data **************************
 
 		// run load function on click 
-		scope.loadData = function(name1,data1){
-		   // alert(scope.chartData.data1)
-		  scope.apiChart.load({
+		scope.loadData = function(update){
+		  console.log(update)
+		  setTimeout(function(){
+		  	scope.apiChart.load({
 			 columns: [
-		        name1,data1
+		        update
 		       ],
-			 types:{
-					data1:'bar' //Add
-				}	
+			 type:'line'
 		    })
+		  },500)
+		  
 		  };
 
 

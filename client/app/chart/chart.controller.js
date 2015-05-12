@@ -6,11 +6,13 @@ angular.module('serveMeApp')
  	var model = 'chart',
  		url  = '/api/charts/';
 
-  	$scope.chartobj = ['data1','data2','data3'];
+  	$scope.chartobj = [];
 
-    $scope.chartobj.data1  = ["created"];
-	$scope.chartobj.data2  = ["goal_completed"];
-	$scope.chartobj.data3  = ["goal"];
+    $scope.chartobj.date   = ["created"];
+    $scope.chartobj.data1  = ["data1"];
+	$scope.chartobj.data2  = ["data2"];
+	$scope.chartobj.data3  = ["data3"];
+	$scope.chartobj.update = ["update", 130, 340, 200, 500, 250, 350,120,80,200,140,50,210,170,100,250,150,70,300,180,120,280];
 
 	//get graph data from models
 	$http.get(url).success(function(res) {
@@ -19,10 +21,11 @@ angular.module('serveMeApp')
 	    $scope.graphData = res;
 	    $scope.graphData.forEach(function(data){
     	  //customize code here
-	      duration = data.goal_completed - data.created
-     	  $scope.chartobj.data1.push($filter('date')(data.created, 'yyyy-MM-dd'));
-    	  $scope.chartobj.data2.push($filter('date')(data.goal_completed, 'yyyy-MM-dd'));
-    	  $scope.chartobj.data3.push(data.goalName);
+	 
+     	  $scope.chartobj.date.push($filter('date')(data.created, 'yyyy-MM-dd'));
+    	  $scope.chartobj.data1.push(data.data1);
+    	  $scope.chartobj.data2.push(data.data2);
+    	  $scope.chartobj.data3.push(data.data3);
 	    });
 		
 		socket.syncUpdates(model, $scope.graphData);
