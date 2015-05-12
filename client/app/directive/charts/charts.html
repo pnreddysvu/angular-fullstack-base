@@ -4,12 +4,12 @@
  <button class="btn-info" ng-click="loadData('x',chartData.data1)">Load</button>
  
  <!-- This is function reference for draw function 
- 	  draw (xid,data1,name3,data3) -->
+ 	  draw (name1,data1,name3,data3) -->
  {{
  	draw (
- 		'created',
+ 		chartData.data1[0],
  		chartData.data1,
- 		'goal',
+ 		chartData.data3[0],
  		chartData.data3
  		)
   }}

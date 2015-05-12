@@ -3,8 +3,8 @@
 angular.module('serveMeApp')
   .controller('ChartCtrl', function ($scope,$http,$filter,socket,$timeout) {
  
- 	var model = 'scroll',
- 		url  = '/api/scrolls/';
+ 	var model = 'chart',
+ 		url  = '/api/charts/';
 
   	$scope.chartobj = ['data1','data2','data3'];
 
@@ -28,6 +28,10 @@ angular.module('serveMeApp')
 		socket.syncUpdates(model, $scope.graphData);
 	   
 	   });
+
+	$timeout(function(){
+		console.log($scope.chartobj)
+	 },300);
 	
 	// deploy function to directive here 
 	$scope.graph  =  function () {

@@ -35,7 +35,7 @@ angular.module('serveMeApp')
 		 };
 
 		//C3 generate the graph for the first time on page on page load
-		scope.draw =  function (xid,data1,name3,data3) {
+		scope.draw =  function (name1,data1,name3,data3) {
 			//On Page load run
 			setTimeout(function(){
 				// By using load() API, you can load data and update the chart dynamically as follows:
@@ -43,7 +43,7 @@ angular.module('serveMeApp')
 				scope.apiChart = c3.generate({
 					bindto:'#apiChart',
 					data:{
-						x:xid,
+						x:name1,
 					    columns:[
 					    	data1,
 						    	[name3,data3],
