@@ -2,17 +2,6 @@
 
 <!-- use directive function here -->
  <button class="btn-info" ng-click="loadData(chartData.update)">Load</button>
- 
- <!-- This is function reference for draw function 
- 	  draw (name1,data1,name3,data3) -->
- {{
- 	draw (
- 		chartData.date,
- 		chartData.data1,
- 		chartData.data2,
- 		chartData.data3
- 		)
-  }}
 
   <!-- Deploy chart function here from controller -->
   {{render()}}
