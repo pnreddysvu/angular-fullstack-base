@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('serveMeApp')
-  .controller('ChartCtrl', function ($scope,charts) {
+  .controller('ChartCtrl', ['$scope','charts',function ($scope,charts) {
  
   	//Instantiate charts service
  	$scope.chart = new charts(['created','data1','data2','data3','data4','data5','data6'],'chart');
@@ -17,4 +17,4 @@ angular.module('serveMeApp')
 	   console.log("Graph will be rendered by this function")
 	 };	 
 
-  });
+  }]);
